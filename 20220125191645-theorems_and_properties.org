@@ -1,0 +1,112 @@
+:PROPERTIES:
+:ID:       d1940d9c-7bf2-4eba-9ff8-d85188d1893e
+:END:
+#+title: Theorems And Properties
+
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheord.setup
+
+
+* 1.2 Ordered Field Axioms
+
+** Posutlate 1. [Field Axioms]
+        $a,b,c \in \mathbb{R}$
+    1. Closure Properties:  $a + b \in \mathbb{R}$ and $a \times b \in \mathbb{R}$
+    2. Associative Properties: $a + (b + c) = (a + b) + c$ and  $a \times (b \times c) = (a \times b) \times c$
+    3. Commutative Properties: $a + b = b + a$ and $a \times b = b \times a$
+    4. Distributive Law: $a \times (b + c) = a \times b + a \times c$
+    5. Existence of the Additive Identity: $0 \in \mathbb{R}$ such that $0 + a = a, \forall a \in \mathbb{}$
+    6. Existence of the Multiplicative Identity: $1 \in \mathbb{R}$ such that $1 \neq 0$ and $1 \times a = a, \forall a \in \mathbb{R}$
+    7. Existence of Additive Inverses: For every $a \in \mathbb{R}$ there is a unique element $-a\in \mathbb{R}$ such that $a + (-a) = 0$
+    8. Existence of Multiplicative Inverses: For every $a \in \mathbb{R}$ there is a unique element $a^{-1}\in \mathbb{R}$ such that $a \times (a^{-1}) = 0$
+
+** Posutlate 2. [Order Axioms]
+    There is a relation $<$ on $\mathbb{R} \times \mathbb{R}$ that has following properties:
+    1. Trichotomy Property: $a,b\in\mathbb{R}$ one and only one of the following statements holds:
+        $a < b$, $b < a$ or $a = b$
+    2. Transitive Property: For $a,b,c \in \mathbb{R}$
+       $a < b$ and $b < c$ $\Rightarrow a < c$
+    3. The Additive Property: For $a,b,c \in \mathbb{R}$,
+       $a < b$ and $c \in \mathbb{R} \Rightarrow a + c < b + c$
+    4. The Multiplicative Properties: For $a,b,c \in \mathbb{R}$,
+       $a < b$ and $c > 0 \Rightarrow a \times c < b \times c$
+       $a < b$ and $c < 0 \Rightarrow b \times c < a \times c$
+
+
+* 1.1 Remark
+    1. $n,m \in \mathbb{Z} \Rightarrow n+m, n-m, n\times m \in \mathbb{Z}$
+    2. $n \in \mathbb{Z} \Rightarrow n \in \mathbb{N}$ if and only if $n >= 1$
+    3. There is no $n \in \mathbb{Z}$ that satisfies $0 < n < 1$
+
+* 1.5 Remark
+    The absolute value is multiplicative i.e $|a\times b| = |a| |b|$
+
+* 1.6 Theorem [Fundametal Theorem Of Absolute Value]
+    Let $a \in \mathbb{R}$ and $0 \leq M$ . Then $|a| \leq M$ if and only if $-M \leq a \leq M$
+
+* 1.7 Theorem
+    The absolute value statisfies the following three properties:
+    1. [Positive Definite] For all $a \in \mathbb{R}$, $|a| \geq 0$ with $|a| = 0$ if and only if $a = 0$
+    2. [Symmetric] For all $a,b \in \mathbb{R}, |a - b| = |b - a|$
+    3. [Triangle Ineqalities] For all $a,b \in \mathbb{R}$,
+       $|a + b| \leq |a| + |b|$ and $||a| - |b|| \leq |a - b|$
+
+* 1.9 Theorem.
+    Let $x,y,a, \in \mathbb{R}$
+    1. $x \le y + \epsilon, \forall \epsilon \ge 0$ if and only if $x \leq y$
+    2. $x \ge y - \epsilon, \forall \epsilon \ge 0$ if and only if $x \geq y$
+    3. $|a| \le \epsilon, \forall \epsilon \ge 0$ if and only if $a = 0$
+
+* 1.10 Definition
+    Let $\mathbb{E} \subset \mathbb{R}$ be nonempty.
+    1. The set $\mathbb{E}$ is said to be bounded above if and only if there is an $M \in \mathbb{R}$ such
+       that $a \leq M, \forall a \in \mathbb{E}$, in which case $M$ is called an upper bound of $\mathbb{E}$.
+    2. A number $s$ is called a supremum of the set $\mathbb{E}$ if and only if $s$ is an upper
+        bound of $\mathbb{E}$ and $s \leq M, \forall M \in \mathbb{R}$ for all upper bounds $M$ of $\mathbb{E}$.
+
+* 1.12 Remark
+    If a set has one upper bound, it has infinitely many upper bounds.
+
+* 1.13 Remark
+    If a set has a supremum, then it has only one supremum.
+
+* 1.14 Theorem [Approximation Property For Suprema].
+    If $\mathbb{E}$ has a finite supremum and $\epsilon \ge 0$ is any positive number, then there is a
+    point $a \in \mathbb{E}$ such that
+        sup$\mathbb{E} - \epsilon \le a \leq$ sup$\mathbb{E}$
+
+* 1.15 Theorem:
+    If $\mathbb{E} \in \mathbb{Z}$ has a supremum, then sup$\mathbb{E} \in \mathbb{E}$. In particular, if the supremum of a set, which contains only integers, exists, that supremum must be an integer.
+
+* Posutlate 3. [Completeness Axiom].
+    If $E$ is a nonempty subset of $\mathbb{R}$ that is bounded above, then $\mathbb{E}$ has finite supremum.
+
+* 1.16 Theorem [Archimedean Principle]
+    Given $a,b \in \mathbb{R}$, with $a \ge 0$, there is an integer $n \in \mathbb{N}$ such that $b \le n \times a$.
+
+* 1.18 Theorem: [Density Of Rationals]
+    If $a,b \in \mathbb{R}$ statisfy $a \le b \Rightarrow q \in \mathbb{Q}$ such that $a \le q \le b$.
+
+* 1.19 Definition
+    Let $\mathbb{E} \subset \mathbb{R}$ be nonempty.
+    1. The set $\mathbb{E}$ is said to be bounded below if and only if there is an $M \in \mathbb{R}$ such
+       that $a \geq M, \forall a \in \mathbb{E}$, in which case $M$ is called a lower bound of $\mathbb{E}$.
+    2. A number $s$ is called a infimum of the set $\mathbb{E}$ if and only if $s$ is a lower
+        bound of $\mathbb{E}$ and $s \geq M, \forall M \in \mathbb{R}$ for all lower bounds $M$ of $\mathbb{E}$.
+
+* 1.20 Theorem [Reflection Principle]
+    Let $\mathbb{E} \subseteq \mathbb{R}$ be nonempty.
+    1. $\mathbb{E}$ has a supremum if and only if $-\mathbb{E}$ has an infimum,in which case
+       inf($-\mathbb{E}$) = -sup$\mathbb{E}$
+    2. $\mathbb{E}$ has an infimum if and only if $-\mathbb{E}$ has a supremum, in which case
+       sup(-$\mathbb{E}$) = -inf$\mathbb{E}$
+
+* 1.21 Theorem [Monotone Property]
+    Suppose $\mathbb{A} \subseteq \mathbb{B}$  are nonempty subsets of $\mathbb{R}$.
+    1. If $\mathbb{B}$ has a supremum, then sup$\mathbb{A} \leq$ sup$\mathbb{B}$
+    2. If $\mathbb{B}$ has a infimum, then sup$\mathbb{A} \geq$ sup$\mathbb{B}$
+
+
+* My Remarks
+ 1. Addition between rationals and irrationals are always irrationals.
+ 2. Multiplication between rationals ans irrationals are always irrationals.
+ 3. $a,b,c,d,\in \mathbb{R}$ and $a \le b, c \le d \Rightarrow a + c \le b + d$

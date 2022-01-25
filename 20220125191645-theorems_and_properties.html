@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-01-25 Tue 23:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Theorems And Properties</title>
+<meta name="author" content="IAmParadox" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Theorems And Properties</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org407d12d">1. 1.2 Ordered Field Axioms</a>
+<ul>
+<li><a href="#org1024b63">1.1. Posutlate 1. [Field Axioms]</a></li>
+<li><a href="#org20b7faf">1.2. Posutlate 2. [Order Axioms]</a></li>
+</ul>
+</li>
+<li><a href="#org5b77cd1">2. 1.1 Remark</a></li>
+<li><a href="#org228085f">3. 1.5 Remark</a></li>
+<li><a href="#orgd705bc3">4. 1.6 Theorem [Fundametal Theorem Of Absolute Value]</a></li>
+<li><a href="#org2ce0a78">5. 1.7 Theorem</a></li>
+<li><a href="#orgebab38c">6. 1.9 Theorem.</a></li>
+<li><a href="#org9474f3d">7. 1.10 Definition</a></li>
+<li><a href="#org2ef6f1c">8. 1.12 Remark</a></li>
+<li><a href="#org1312b43">9. 1.13 Remark</a></li>
+<li><a href="#orgfb95d82">10. 1.14 Theorem [Approximation Property For Suprema].</a></li>
+<li><a href="#orgdc946c8">11. 1.15 Theorem:</a></li>
+<li><a href="#org6beca01">12. Posutlate 3. [Completeness Axiom].</a></li>
+<li><a href="#orga53989d">13. 1.16 Theorem [Archimedean Principle]</a></li>
+<li><a href="#org343eaaf">14. 1.18 Theorem: [Density Of Rationals]</a></li>
+<li><a href="#orga00c6be">15. 1.19 Definition</a></li>
+<li><a href="#org3802968">16. 1.20 Theorem [Reflection Principle]</a></li>
+<li><a href="#org3812416">17. 1.21 Theorem [Monotone Property]</a></li>
+<li><a href="#orgae8a1ef">18. My Remarks</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org407d12d" class="outline-2">
+<h2 id="org407d12d"><span class="section-number-2">1.</span> 1.2 Ordered Field Axioms</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org1024b63" class="outline-3">
+<h3 id="org1024b63"><span class="section-number-3">1.1.</span> Posutlate 1. [Field Axioms]</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+\(a,b,c \in \mathbb{R}\)
+</p>
+<ol class="org-ol">
+<li>Closure Properties:  \(a + b \in \mathbb{R}\) and \(a \times b \in \mathbb{R}\)</li>
+<li>Associative Properties: \(a + (b + c) = (a + b) + c\) and  \(a \times (b \times c) = (a \times b) \times c\)</li>
+<li>Commutative Properties: \(a + b = b + a\) and \(a \times b = b \times a\)</li>
+<li>Distributive Law: \(a \times (b + c) = a \times b + a \times c\)</li>
+<li>Existence of the Additive Identity: \(0 \in \mathbb{R}\) such that \(0 + a = a, \forall a \in \mathbb{}\)</li>
+<li>Existence of the Multiplicative Identity: \(1 \in \mathbb{R}\) such that \(1 \neq 0\) and \(1 \times a = a, \forall a \in \mathbb{R}\)</li>
+<li>Existence of Additive Inverses: For every \(a \in \mathbb{R}\) there is a unique element \(-a\in \mathbb{R}\) such that \(a + (-a) = 0\)</li>
+<li>Existence of Multiplicative Inverses: For every \(a \in \mathbb{R}\) there is a unique element \(a^{-1}\in \mathbb{R}\) such that \(a \times (a^{-1}) = 0\)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org20b7faf" class="outline-3">
+<h3 id="org20b7faf"><span class="section-number-3">1.2.</span> Posutlate 2. [Order Axioms]</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+There is a relation \(<\) on \(\mathbb{R} \times \mathbb{R}\) that has following properties:
+</p>
+<ol class="org-ol">
+<li>Trichotomy Property: \(a,b\in\mathbb{R}\) one and only one of the following statements holds:
+\(a < b\), \(b < a\) or \(a = b\)</li>
+<li>Transitive Property: For \(a,b,c \in \mathbb{R}\)
+\(a < b\) and \(b < c\) \(\Rightarrow a < c\)</li>
+<li>The Additive Property: For \(a,b,c \in \mathbb{R}\),
+\(a < b\) and \(c \in \mathbb{R} \Rightarrow a + c < b + c\)</li>
+<li>The Multiplicative Properties: For \(a,b,c \in \mathbb{R}\),
+\(a < b\) and \(c > 0 \Rightarrow a \times c < b \times c\)
+\(a < b\) and \(c < 0 \Rightarrow b \times c < a \times c\)</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org5b77cd1" class="outline-2">
+<h2 id="org5b77cd1"><span class="section-number-2">2.</span> 1.1 Remark</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>\(n,m \in \mathbb{Z} \Rightarrow n+m, n-m, n\times m \in \mathbb{Z}\)</li>
+<li>\(n \in \mathbb{Z} \Rightarrow n \in \mathbb{N}\) if and only if \(n >= 1\)</li>
+<li>There is no \(n \in \mathbb{Z}\) that satisfies \(0 < n < 1\)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org228085f" class="outline-2">
+<h2 id="org228085f"><span class="section-number-2">3.</span> 1.5 Remark</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The absolute value is multiplicative i.e \(|a\times b| = |a| |b|\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd705bc3" class="outline-2">
+<h2 id="orgd705bc3"><span class="section-number-2">4.</span> 1.6 Theorem [Fundametal Theorem Of Absolute Value]</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Let \(a \in \mathbb{R}\) and \(0 \leq M\) . Then \(|a| \leq M\) if and only if \(-M \leq a \leq M\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2ce0a78" class="outline-2">
+<h2 id="org2ce0a78"><span class="section-number-2">5.</span> 1.7 Theorem</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+The absolute value statisfies the following three properties:
+</p>
+<ol class="org-ol">
+<li>[Positive Definite] For all \(a \in \mathbb{R}\), \(|a| \geq 0\) with \(|a| = 0\) if and only if \(a = 0\)</li>
+<li>[Symmetric] For all \(a,b \in \mathbb{R}, |a - b| = |b - a|\)</li>
+<li>[Triangle Ineqalities] For all \(a,b \in \mathbb{R}\),
+\(|a + b| \leq |a| + |b|\) and \(||a| - |b|| \leq |a - b|\)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgebab38c" class="outline-2">
+<h2 id="orgebab38c"><span class="section-number-2">6.</span> 1.9 Theorem.</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Let \(x,y,a, \in \mathbb{R}\)
+</p>
+<ol class="org-ol">
+<li>\(x \le y + \epsilon, \forall \epsilon \ge 0\) if and only if \(x \leq y\)</li>
+<li>\(x \ge y - \epsilon, \forall \epsilon \ge 0\) if and only if \(x \geq y\)</li>
+<li>\(|a| \le \epsilon, \forall \epsilon \ge 0\) if and only if \(a = 0\)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org9474f3d" class="outline-2">
+<h2 id="org9474f3d"><span class="section-number-2">7.</span> 1.10 Definition</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+Let \(\mathbb{E} \subset \mathbb{R}\) be nonempty.
+</p>
+<ol class="org-ol">
+<li>The set \(\mathbb{E}\) is said to be bounded above if and only if there is an \(M \in \mathbb{R}\) such
+that \(a \leq M, \forall a \in \mathbb{E}\), in which case \(M\) is called an upper bound of \(\mathbb{E}\).</li>
+<li>A number \(s\) is called a supremum of the set \(\mathbb{E}\) if and only if \(s\) is an upper
+bound of \(\mathbb{E}\) and \(s \leq M, \forall M \in \mathbb{R}\) for all upper bounds \(M\) of \(\mathbb{E}\).</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org2ef6f1c" class="outline-2">
+<h2 id="org2ef6f1c"><span class="section-number-2">8.</span> 1.12 Remark</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+If a set has one upper bound, it has infinitely many upper bounds.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1312b43" class="outline-2">
+<h2 id="org1312b43"><span class="section-number-2">9.</span> 1.13 Remark</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+If a set has a supremum, then it has only one supremum.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfb95d82" class="outline-2">
+<h2 id="orgfb95d82"><span class="section-number-2">10.</span> 1.14 Theorem [Approximation Property For Suprema].</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+If \(\mathbb{E}\) has a finite supremum and \(\epsilon \ge 0\) is any positive number, then there is a
+point \(a \in \mathbb{E}\) such that
+    sup\(\mathbb{E} - \epsilon \le a \leq\) sup\(\mathbb{E}\)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc946c8" class="outline-2">
+<h2 id="orgdc946c8"><span class="section-number-2">11.</span> 1.15 Theorem:</h2>
+<div class="outline-text-2" id="text-11">
+<p>
+If \(\mathbb{E} \in \mathbb{Z}\) has a supremum, then sup\(\mathbb{E} \in \mathbb{E}\). In particular, if the supremum of a set, which contains only integers, exists, that supremum must be an integer.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6beca01" class="outline-2">
+<h2 id="org6beca01"><span class="section-number-2">12.</span> Posutlate 3. [Completeness Axiom].</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+If \(E\) is a nonempty subset of \(\mathbb{R}\) that is bounded above, then \(\mathbb{E}\) has finite supremum.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga53989d" class="outline-2">
+<h2 id="orga53989d"><span class="section-number-2">13.</span> 1.16 Theorem [Archimedean Principle]</h2>
+<div class="outline-text-2" id="text-13">
+<p>
+Given \(a,b \in \mathbb{R}\), with \(a \ge 0\), there is an integer \(n \in \mathbb{N}\) such that \(b \le n \times a\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org343eaaf" class="outline-2">
+<h2 id="org343eaaf"><span class="section-number-2">14.</span> 1.18 Theorem: [Density Of Rationals]</h2>
+<div class="outline-text-2" id="text-14">
+<p>
+If \(a,b \in \mathbb{R}\) statisfy \(a \le b \Rightarrow q \in \mathbb{Q}\) such that \(a \le q \le b\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga00c6be" class="outline-2">
+<h2 id="orga00c6be"><span class="section-number-2">15.</span> 1.19 Definition</h2>
+<div class="outline-text-2" id="text-15">
+<p>
+Let \(\mathbb{E} \subset \mathbb{R}\) be nonempty.
+</p>
+<ol class="org-ol">
+<li>The set \(\mathbb{E}\) is said to be bounded below if and only if there is an \(M \in \mathbb{R}\) such
+that \(a \geq M, \forall a \in \mathbb{E}\), in which case \(M\) is called a lower bound of \(\mathbb{E}\).</li>
+<li>A number \(s\) is called a infimum of the set \(\mathbb{E}\) if and only if \(s\) is a lower
+bound of \(\mathbb{E}\) and \(s \geq M, \forall M \in \mathbb{R}\) for all lower bounds \(M\) of \(\mathbb{E}\).</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org3802968" class="outline-2">
+<h2 id="org3802968"><span class="section-number-2">16.</span> 1.20 Theorem [Reflection Principle]</h2>
+<div class="outline-text-2" id="text-16">
+<p>
+Let \(\mathbb{E} \subseteq \mathbb{R}\) be nonempty.
+</p>
+<ol class="org-ol">
+<li>\(\mathbb{E}\) has a supremum if and only if \(-\mathbb{E}\) has an infimum,in which case
+inf(\(-\mathbb{E}\)) = -sup\(\mathbb{E}\)</li>
+<li>\(\mathbb{E}\) has an infimum if and only if \(-\mathbb{E}\) has a supremum, in which case
+sup(-\(\mathbb{E}\)) = -inf\(\mathbb{E}\)</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org3812416" class="outline-2">
+<h2 id="org3812416"><span class="section-number-2">17.</span> 1.21 Theorem [Monotone Property]</h2>
+<div class="outline-text-2" id="text-17">
+<p>
+Suppose \(\mathbb{A} \subseteq \mathbb{B}\)  are nonempty subsets of \(\mathbb{R}\).
+</p>
+<ol class="org-ol">
+<li>If \(\mathbb{B}\) has a supremum, then sup\(\mathbb{A} \leq\) sup\(\mathbb{B}\)</li>
+<li>If \(\mathbb{B}\) has a infimum, then sup\(\mathbb{A} \geq\) sup\(\mathbb{B}\)</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgae8a1ef" class="outline-2">
+<h2 id="orgae8a1ef"><span class="section-number-2">18.</span> My Remarks</h2>
+<div class="outline-text-2" id="text-18">
+<ol class="org-ol">
+<li>Addition between rationals and irrationals are always irrationals.</li>
+<li>Multiplication between rationals ans irrationals are always irrationals.</li>
+<li>\(a,b,c,d,\in \mathbb{R}\) and \(a \le b, c \le d \Rightarrow a + c \le b + d\)</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: IAmParadox</p>
+<p class="date">Created: 2022-01-25 Tue 23:37</p>
+</div>
+</body>
+</html>
