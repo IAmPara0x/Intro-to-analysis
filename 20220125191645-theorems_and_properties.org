@@ -143,7 +143,69 @@
 * 1.28 Remark
     If $n \in \mathbb{N}$ is not a perfect square (i.e if there is no $m \in \mathbb{N}$ such that $n = m^2$), then $\sqrt{n}$ is irrational.
 
+* 1.29 Definition
+    Let $X$ and $Y$ be sets and $f : X \rightarrow Y$
+        1. $f$ is said to be 1-1 (one-to-one or an Injection) if and only if
+            $x_1,x_2 \in X$ and $f(x_1) = f(x_2) \Rightarrow x_1 = x_2$
+        2. $f$ is said to be onto (or a surjection) if and only if for each $y \in Y$ there is an $x \in X$ such that $y = f(x)$.
+        3. $f$ is called a bijection if and only if it is both 1-1 and onto.
+
+* 1.30 Theorem
+    Let $X$ and $Y$ be sets and $f: X \rightarrow Y$. Then the following three statements are equivalent.
+        1. $f$ has an inverse.
+        2. $f$ is 1-1 from $X$ and $Y$.
+        3. There is a function $g: X \rightarrow Y$ such that
+           $g(f(x)) = x, \forall x \in X$
+           and
+           $f(g(y)) = y, \forall y \in Y$
+
+* 1.31 Remark
+Let $I$ be an interval and let $f : I \rightarrow \mathbb{R}$. If the derivative of $f$ is either always positve on $I$,
+or always negative on $I$, then $f$ is 1-1 on $I$.
+
+
+* 1.33 Definition
+Let $X$ and $Y$ be sets and $f: X \rightarrow Y$. The image of a set $E \subseteq X$ under $f$ is the set
+    $f(E) := \{y \in Y: y = f(x) \text{ for some } x \in E \}$
+
+The inverse image of a set $E \subseteq Y$ under $f$ is the set
+    $f^{-1}(E) := \{x \in X : f(x) = y \text{ for some } y \in E\}$
+
+
+* 1.35 Definition
+    Let $\epsilon = \{E_{\alpha}\}_{\alpha \in A}$ be a collection of sets.
+        1)  The /union/ of the collection $\epsilon$ is the set
+           $\bigcup_{\alpha \in A} E_{\alpha} := \{x: x \in E_{\alpha} \text{ for some } \alpha \in A\}$
+
+        2) The /intersection/ of the collection $\epsilon$ is the set
+           $\bigcap_{\alpha \in A} E_{\alpha} := \{x: x \in E_{\alpha} \text{ for all }  \alpha \in A \}$
+
+* 1.36 Theorem [DeMorGan's Laws]
+    Let $X$ be a set and $\{E_{\alpha}\}_{\alpha \in A}$ be a collection of subsets of $X$.
+    If for each $E \subseteq X$ the symbol $E^c$ represents the set $X\setminus E$, then
+    $\left(\bigcup_{\alpha \in A} E_{\alpha}\right)^c = \bigcap_{\alpha \in A} E_{\alpha}^c$
+
+    and
+
+    $\left(\bigcap_{\alpha \in A} E_{\alpha}\right)^c = \bigcup_{\alpha \in A} E_{\alpha}^c$
+
+* 1.37 Theorem
+    Let $X$ and $Y$ be sets and $f: X \rightarrow Y$
+
+        1) If $\{E_{\alpha}\}_{\alpha \in A}$ is a collection of subsets of $X$, then
+           $f\left(\bigcup_{\alpha \in A}E_{\alpha}\right) = \bigcup_{\alpha \in A}f(E_{\alpha})$ and $f\left(\bigcap_{\alpha \in A}E_{\alpha}\right) \subseteq \bigcap_{\alpha \in A} f(E_{\alpha})$
+
+        2) If $B$ and $C$ are subsets of $X$, then $f(C\setminus B) \supseteq f(C) \setminus f(B)$
+
+        3) If $\{E_{\alpha}\}_{\alpha \in A}$ is a collection of subsets of $Y$, then
+           $f^{-1}\left(\bigcup_{\alpha \in A} E_{\alpha} \right) = \bigcup_{\alpha \in A} f^{-1}(E_{\alpha})$ and $f^{-1}\left(\bigcap_{\alpha \in A} E_{\alpha} \right) = \bigcap_{\alpha \in A} f^{-1}(E_{\alpha})$
+
+        4) If $B$ and $C$ are subsets of $Y$, then $f(C\setminus B) = f(C) \setminus f(B)$.
+
+        5) If $E \subseteq f(X)$, then $f(f^{-1}(E)) = E$, but if $E \subseteq X$ then $f^{-1}(f(E)) \supseteq E$
+
 ---------------
+
 * Extra Remarks
 
 ** [Density of Irrationals]
